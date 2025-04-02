@@ -1,60 +1,56 @@
-__Bluetooth Challenge__  
+# Ionic Capacitor Bluetooth Player
 
-Your challenge is to implement any bluetooth device that you have handy into an Ionic application for Android. This should be extremely basic visually since we are specifically interested in the bluetooth implementation.
+## 📌 Descripción
 
-If you do not have a bluetooth device available and would be unable to complete this task, please let us know.
+Este es un proyecto desarrollado con **Ionic y Capacitor** que explora la capacidad de interactuar con **Bluetooth Low Energy (BLE)** en dispositivos móviles. Su funcionalidad principal es **buscar un dispositivo Bluetooth y reproducir la canción "Bach - Cello" en formato MP3**, la cual está almacenada en los assets del proyecto.
 
-__Requirements__  
+Este proyecto tiene como objetivo evaluar la integración de **Capacitor** con tecnologías nativas y su uso en el desarrollo de aplicaciones para **Android e iOS**.
 
-Implement any BLE peripheral that you have into the sample Ionic app that has been provided to you, including the following bluetooth interactions:  
-- Scanning for devices and showing a list that you can select to pair from
-- Pairing the device
-- Transmitting data and showing visually
-- Disconnecting from the device
-- Include some unit tests
-  
-The visuals are not important as long as there is something to show that these actions have been completed (ie. a list of scanned devices that you can choose to pair with, and some visual representation of the data). This is a starter app for Ionic, so you are welcome to use an appropriate plugin. This plugin has been added already but feel free to use something else - https://github.com/capacitor-community/bluetooth-le. If you find yourself going beyond the allotted hours, please note your path forward and what you intended to do to complete the app. 
+## 🛠️ Tecnologías y Paquetes Utilizados
 
-__Submission__  
-- Send us a link to your project on GitHub with any instructions as well as details about the bluetooth device(s) you used
-- Include screenshots for the visuals of your project (as we won't have the device on hand)
-- Include any commentary that you would like us to know
+- **Ionic 7.1.1**: Framework para el desarrollo de aplicaciones híbridas.
+- **Capacitor 5.x**: Herramienta para interactuar con funcionalidades nativas en plataformas móviles.
+- **Bluetooth LE**: Librería para el manejo de dispositivos Bluetooth de bajo consumo.
+- **Jasmine/Karma**: Pruebas unitarias para garantizar la calidad del código.
 
-__Requirements for Running this Repo__  
+## 📂 Estructura del Proyecto
 
-Node >=16 & NPM  
-- Recommend using nvm to install & manage node versions - https://github.com/nvm-sh/nvm
-- `nvm install 16`  
-- `nvm use 16`  
-  
-Ionic CLI 7.1.1  
-- `npm i -g @ionic/cli@7.1.1`  
+```
+/app
+│── home/            # Página principal, estilos y test
+│── services/        # Archivo de configuración y acceso a las funcionalidades bluetooth
+```
 
-__Run project for development__  
+## 📋 Consideraciones para su Funcionamiento
 
-Install dependencies  
-- `npm install`
+Para que la aplicación funcione correctamente, es necesario que los dispositivos cumplan con las siguientes características:
 
-Run project in browser @ `http://localhost:4200/`   
-- `npm run start`
+- Soporte para **Bluetooth Low Energy (BLE)**.
+- Permisos de **Bluetooth y ubicación** habilitados en la configuración del sistema.
+- Conexión a un dispositivo compatible para la reproducción del audio.
 
-Run On Android
+## 📌 Evidencia de Funcionamiento
 
-__Add Android Platform__
-- `npm install @capacitor/android`
-- `npx cap add android`
-- Ensure that you have a www/ assets folder in the root; please add one and drop in a copy of the index.html from the src/ folder
+A continuación, se proporciona evidencia del correcto funcionamiento de la aplicación:
 
-__Open Android Studio__
-- Confirm you are using the embedded JDK of 11 or above
-- Run the build and run directly on device
+![WhatsApp Image 2025-04-02 at 3 52 15 PM](https://github.com/user-attachments/assets/39551364-e75e-454d-aec3-85bd75a8cdd4)
+![WhatsApp Image 2025-04-02 at 3 52 15 PM (1)](https://github.com/user-attachments/assets/d09c1ae0-e6e7-4fb6-ba79-6a13efde16a3)
+![WhatsApp Image 2025-04-02 at 3 52 15 PM (2)](https://github.com/user-attachments/assets/6d3972e8-015e-480f-92ca-f8b12efaaec4)
+![WhatsApp Image 2025-04-02 at 3 52 14 PM](https://github.com/user-attachments/assets/f63639d4-2594-4e29-be8c-4ad5f698bcf9)
 
-__Make Changes to the Src Files__
-- `npm run build`
-- `npx cap copy`
-- Re-run on the device from Android Studio
 
-Documentation for reference: https://capacitorjs.com/docs/android
+## 🚀 Mejoras Futuras
 
-If you are more comfortable completing the challenge in a native Android application, feel free to do so. 
-# bluetooth-ionic-android
+Se planea incorporar las siguientes mejoras:
+
+- Implementación de un **gestor de errores avanzado** para conexiones Bluetooth inestables.
+- Compatibilidad con más formatos de audio y dispositivos Bluetooth.
+- Una interfaz gráfica mejorada con animaciones interactivas.
+
+## 👨‍💻 Desarrollado por
+
+**Jeison Solarte**
+
+---
+
+¡Espero que este README te ayude! Puedes modificarlo según sea necesario. 🚀
