@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bluetooth Scanner</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="scanDevices()" [disabled]="isScanning" class="scan-button" expand="block">
+    <span *ngIf="!isScanning">Escanear Dispositivos</span>
+    <div *ngIf="isScanning" class="button-content">
+      <ion-spinner name="crescent" class="spinner-small"></ion-spinner>
+      <span class="fade-in">Escaneando...</span>
+    </div>
+  </ion-button>
+
+  <!-- Loading durante el escaneo con animación -->
+  <div class="loading-container fade-in-out" *ngIf="isScanning">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Buscando dispositivos Bluetooth...</p>
+  </div>
+
+  <div class="no-devices fade-in" *ngIf="showNoDevicesMessage">
+    No se encontraron dispositivos Bluetooth cercanos
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let device of devices" [class.connected]="selectedDevice?.deviceId === device.deviceId">
+      <ion-label>{{ device.name || device.deviceId || 'Desconocido' }}</ion-label>
+
+      <ion-button (click)="connect(device)" [disabled]="isConnecting" class="connect-button">
+        <span *ngIf="!isConnecting">Conectar</span>
+        <div *ngIf="isConnecting" class="button-content">
+          <ion-spinner name="crescent" class="spinner-small"></ion-spinner>
+          <span class="fade-in">Conectando...</span>
+        </div>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="selectedDevice" class="connected-container fade-in">
+    <p>Conectado a: {{ selectedDevice.name || 'Desconocido' }}</p>
+    <pre>Info: {{ selectedDevice | json }}</pre>
+    <pre class="error-message" *ngIf="bluetoothService.messageError">
+      {{ bluetoothService.messageError }}
+    </pre>
+    <ion-button (click)="disconnect()">Desconectar</ion-button>
+
+    <ion-button (click)="sendMessage()" [disabled]="isPlaying" class="play-button">
+      <span *ngIf="!isPlaying">Play Audio</span>
+
+      <div *ngIf="isPlaying" class="button-content">
+        <ion-icon name="play" class="blink-icon"></ion-icon>
+        <span class="ion-padding-start">Reproduciendo...</span>
+      </div>
+    </ion-button>
+  </div>
+</ion-content>

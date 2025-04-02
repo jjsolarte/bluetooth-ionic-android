@@ -1,0 +1,7 @@
+{
+  "name": "fe-bluetooth-challenge",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

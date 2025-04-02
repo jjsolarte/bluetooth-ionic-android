@@ -1,0 +1,109 @@
+// Estilos para bluetooth-scanner.page.scss
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner-small {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.no-devices {
+  text-align: center;
+  padding: 20px;
+  color: var(--ion-color-medium);
+}
+
+.connected-container {
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 8px;
+  background-color: var(--ion-color-light);
+}
+
+.error-message {
+  color: var(--ion-color-danger);
+  white-space: pre-wrap;
+  font-size: 12px;
+}
+
+.connected {
+  --background: rgba(var(--ion-color-success-rgb), 0.15);
+}
+
+// Animaciones
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.blink-icon {
+  animation: blink 1s infinite;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+.fade-in-out {
+  animation: fadeInOut 5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+// Transiciones para botones
+.scan-button,
+.connect-button,
+.play-button {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+ion-spinner {
+  transition: opacity 0.3s;
+}
